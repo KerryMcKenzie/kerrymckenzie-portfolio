@@ -1,0 +1,631 @@
+/* CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* this bacground linear gradient applies to entire webpage */
+    background: linear-gradient(120deg, #06033d 35%, #290465 45%, #694cb2 100%);
+    /* navy color below */
+    /* background: navy;  */
+    color: aliceblue;
+    overflow-x: hidden;
+    /* below adds linear gradient to entire page up and down */
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background: linear-gradient(180deg, #1e3c72 0%, #2a5298 25%, #6122ce 75%, #9b55f7 100%); */
+    /* url('mountain.jpg') center/cover no-repeat; */
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    color: aliceblue;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.6s both;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+}
+
+/* Clear animation after page load
+.hero-cta {
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+} */
+
+.hero-cta:hover {
+    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    color: aliceblue;
+    /* color: #1e3c72; */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Sticky Navigation */
+/* .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        } */
+
+
+
+/* NEW -- Create a pseudo-element for the blurred background */
+.fixed-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(6, 3, 61, 0.3);
+    /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    z-index: -10;
+    /* Puts blur layer behind the buttons */
+}
+
+/* Fixed navigation that never moves */
+.fixed-nav {
+    position: fixed;
+    /* Changed from sticky - stays in place always */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    /* background: navy; */
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* below, if you add a custom color and want to blur it */
+    backdrop-filter: blur(10px);
+
+}
+
+
+.fixed-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.fixed-nav a {
+    color: #1e3c72;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Bubble-style nav items */
+.fixed-nav ul li a {
+    display: inline-block;
+    padding: 12px 28px;
+    /* Creates the bubble shape */
+    background: rgba(30, 60, 114, 0.1);
+    /* Light background */
+    border-radius: 25px;
+    /* Makes it pill/bubble shaped */
+    color: aliceblue;
+    /* color: #1e3c72; */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    /* border: 2px solid transparent; */
+    border: 2px solid aliceblue;
+
+}
+
+.fixed-nav ul li a:hover {
+    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    color: aliceblue;
+    transform: translateY(-3px) scale(1.02);
+    /* ← Change to 1.05 for 2% subtle growth */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/*  sticky navigation moves */
+
+/* .sticky-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #1e3c72, #7e22ce);
+            transition: width 0.3s ease;
+        }
+
+        .sticky-nav a:hover {
+            color: #7e22ce;
+        }
+
+        .sticky-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(90deg, #fff, #e9d5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* About Section */
+#about {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 60px 40px;
+    backdrop-filter: blur(10px);
+    margin: 40px auto;
+}
+
+#about p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Experience Section */
+#experience {
+    margin-top: 60px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.experience-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e9d5ff;
+}
+
+.experience-card p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 60px 40px;
+    backdrop-filter: blur(10px);
+    margin: 40px auto;
+}
+
+#contact a {
+    color: #e9d5ff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #fff;
+}
+
+.connect {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #e9d5ff;
+
+}
+
+/* ---Projects Styling --- */
+/* Projects Section */
+.projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 20px 40px 20px;
+}
+
+.projects-header {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 60px;
+
+}
+
+.projects-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #fff, #e9d5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.projects-header p {
+    font-size: 1.3rem;
+    color: #e9d5ff;
+}
+
+/* Category Section */
+.category-section {
+    margin-bottom: 60px;
+}
+
+.category-section h1 {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 10;
+}
+
+.category-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #e9d5ff;
+    text-align: center;
+}
+
+/* Video card  Grid */
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Added clickable for full-screen */
+/* .video-card h3 a {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #e9d5ff;
+    text-decoration: none;
+} */
+
+
+.video-card iframe {
+    width: 100%;
+    height: 210px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Fullstreen clicable */
+.fullscreen-btn {
+    display: inline-block;
+  color: #e9d5ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.fullscreen-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(126, 34, 206, 0.4);
+    background: linear-gradient(135deg, #2a5298, #a855f7);
+}
+
+/* --- End Fullstreen clicable */
+
+/* Interactive Video Demo Walkthough Stylling */
+
+.interactive-demo-card {
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.2), rgba(126, 34, 206, 0.2));
+    border: 2px solid rgba(233, 213, 255, 0.3);
+    min-height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.demo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px 0;
+}
+
+.demo-icon {
+    color: #e9d5ff;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.demo-description {
+    font-size: 1.1rem;
+    color: #e9d5ff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.demo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid aliceblue;
+    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3);
+}
+
+.demo-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.5);
+    background: linear-gradient(135deg, #2a5298, #a855f7);
+}
+
+.demo-button .arrow {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.demo-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* End Interactive Video Demo Walkthough */
+
+/* ---End Projects Styling --- */
+
+/* Sticky Footer with Social Bubbles */
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: AliceBlue;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.social-bubble {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-bubble:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.4);
+}
+
+.social-bubble svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+.social-bubble a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Animations */
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .fixed-nav ul {
+        /* Responsive wrapping and alignment */
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social-bubble {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-bubble svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Add padding to body to account for sticky footer */
+body {
+    padding-bottom: 100px;
+}
+
+/* Responsive - Projects Page */
+@media (max-width: 768px) {
+    .projects-header h1 {
+        font-size: 2rem;
+    }
+
+    .projects-header p {
+        font-size: 1.1rem;
+    }
+
+    .category-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .video-card {
+        max-width: 100%;
+    }
+
+    .video-card iframe {
+        height: 75px;
+    }
+
+    /* new Responsive Styling -- see Claude's expanded code but it slowed down loading */
+
+
+    .fixed-nav ul {
+        gap: 15px;
+    }
+
+    .social-bubble {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-bubble svg {
+        width: 25px;
+        height: 25px;
+    }
+}
