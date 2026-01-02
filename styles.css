@@ -413,6 +413,7 @@ section h2 {
     transition: all 0.3s ease;
     width: 100%;
     max-width: 300px;
+   
 }
 
 .video-card:hover {
@@ -432,7 +433,7 @@ section h2 {
 
 .video-card iframe {
     width: 100%;
-    height: 210px;
+    height: 250px;
     border-radius: 10px;
     border: none;
 }
