@@ -1,4 +1,14 @@
 /* CSS */
+.alert {
+    color: red;
+}
+
+.tours {
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 25px;
+}
+
 * {
     margin: 0;
     padding: 0;
