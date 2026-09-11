@@ -14,13 +14,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+    /* Note: Two Color Palette themes:
+     a.) background: #00296b, #00509D, #4387ce  
+    b.) Button Hovers #00509D, #4387ce  */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* this bacground linear gradient applies to entire webpage */
-    background: linear-gradient(120deg, #06033d 35%, #290465 45%, #694cb2 100%);
-    /* navy color below */
-    /* background: navy;  */
+    background: linear-gradient(120deg, #00296b 35%, #003f88 45%, #00509d 100%);
     color: aliceblue;
     overflow-x: hidden;
     /* below adds linear gradient to entire page up and down */
@@ -75,7 +75,7 @@ body {
 } */
 
 .hero-cta:hover {
-    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    background: linear-gradient(135deg, #00509D, #4387ce);
     color: aliceblue;
     /* color: #1e3c72; */
     transform: translateY(-3px) scale(1.05);
@@ -104,7 +104,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(6, 3, 61, 0.3);
+    background: none(120deg, #00296b 35%, #003f88 45%, #00509d 100%);
+
+
     /* Semi-transparent background */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -154,7 +156,7 @@ body {
     /* Creates the bubble shape */
     background: rgba(30, 60, 114, 0.1);
     /* Light background */
-    border-radius: 25px;
+    border-radius: 50px;
     /* Makes it pill/bubble shaped */
     color: aliceblue;
     /* color: #1e3c72; */
@@ -168,7 +170,7 @@ body {
 }
 
 .fixed-nav ul li a:hover {
-    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    background: linear-gradient(135deg, #00509D, #4387ce);
     color: aliceblue;
     transform: translateY(-3px) scale(1.02);
     /* ← Change to 1.05 for 2% subtle growth */
@@ -209,7 +211,7 @@ section h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
     text-align: center;
-    background: linear-gradient(90deg, #fff, #e9d5ff);
+    background: linear-gradient(90deg, #fff, aliceblue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -262,7 +264,7 @@ section h2 {
 .experience-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #e9d5ff;
+    color: aliceblue;
 }
 
 .experience-card p {
@@ -281,7 +283,7 @@ section h2 {
 }
 
 #contact a {
-    color: #e9d5ff;
+    color: aliceblue;
     text-decoration: none;
     font-size: 1.3rem;
     transition: color 0.3s ease;
@@ -294,7 +296,7 @@ section h2 {
 .connect {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #e9d5ff;
+    color: aliceblue;
 }
 
 /* Moving social bubble styling here */
@@ -308,7 +310,7 @@ section h2 {
     right: 0;
     background: AliceBlue;
     /* padding: 20px; (new spacing below makes spacing more compact update 012125)*/
-    padding: 5px 20px 5px 20px; 
+    padding: 5px 20px 5px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -325,7 +327,7 @@ section h2 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    background: linear-gradient(135deg, #003566 35%, #023e8a 45%, #0077b6 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -336,7 +338,7 @@ section h2 {
 
 .social-bubble:hover {
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.4);
+    box-shadow: 0 8px 25px rgba(8, 39, 122, 0.4);
 }
 
 .social-bubble svg {
@@ -379,7 +381,7 @@ section h2 {
 .projects-header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, #fff, #e9d5ff);
+    background: linear-gradient(90deg, #fff, aliceblue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -387,7 +389,7 @@ section h2 {
 
 .projects-header p {
     font-size: 1.3rem;
-    color: #e9d5ff;
+    color: aliceblue;
 }
 
 /* Category Section */
@@ -404,7 +406,7 @@ section h2 {
 .category-section h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #e9d5ff;
+    color: aliceblue;
     text-align: center;
 }
 
@@ -425,7 +427,7 @@ section h2 {
     transition: all 0.3s ease;
     width: 100%;
     max-width: 300px;
-   
+
 }
 
 .video-card:hover {
@@ -438,11 +440,12 @@ section h2 {
 /* .video-card h3 a {
     font-size: 1.3rem;
     margin-bottom: 15px;
-    color: #e9d5ff;
+    color: aliceblue;
     text-decoration: none;
 } */
 
-.video-card video, iframe{
+.video-card video,
+iframe {
     width: 100%;
     height: 190px;
     border-radius: 10px;
@@ -452,7 +455,7 @@ section h2 {
 /* Fullscreen clicable */
 .fullscreen-btn {
     display: inline-block;
-    color: #e9d5ff;
+    color: aliceblue;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.3rem;
@@ -462,8 +465,8 @@ section h2 {
 
 .fullscreen-btn:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(126, 34, 206, 0.4);
-    background: linear-gradient(135deg, #2a5298, #a855f7);
+    box-shadow: 0 1px 1px rgba(7, 34, 110, 0.877);
+    background: linear-gradient(135deg, #4387ce 100%);
 }
 
 /* --- End Fullscreen clicable */
@@ -489,14 +492,14 @@ section h2 {
 }
 
 .demo-icon {
-    color: #e9d5ff;
+    color: aliceblue;
     margin-bottom: 20px;
     animation: pulse 2s ease-in-out infinite;
 }
 
 .demo-description {
     font-size: 1.1rem;
-    color: #e9d5ff;
+    color: aliceblue;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -506,7 +509,8 @@ section h2 {
     align-items: center;
     gap: 10px;
     padding: 15px 35px;
-    background: linear-gradient(135deg, #1e3c72, #7e22ce);
+    background: linear-gradient(135deg, #00509D, #4387ce);
+    /* background: linear-gradient(135deg, #1e3c72, #7e22ce); */
     color: aliceblue;
     text-decoration: none;
     border-radius: 50px;
@@ -520,7 +524,7 @@ section h2 {
 .demo-button:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 25px rgba(126, 34, 206, 0.5);
-    background: linear-gradient(135deg, #2a5298, #a855f7);
+    background: linear-gradient(135deg, #265fc9, #76a1da);
 }
 
 .demo-button .arrow {
@@ -613,9 +617,9 @@ section h2 {
 }
 
 /* Add padding to body to account for sticky footer body */
-{
+    {
     padding-bottom: 100px;
-} 
+}
 
 /* Responsive - Projects Page */
 @media (max-width: 768px) {
@@ -635,7 +639,8 @@ section h2 {
         max-width: 100%;
     }
 
-    .video-card video, iframe {
+    .video-card video,
+    iframe {
         height: 75px;
     }
 
@@ -661,7 +666,8 @@ section h2 {
 
 .sticky-footer {
     /* existing styles */
-     flex-wrap: wrap; /* Add this to allow wrapping */
+    flex-wrap: wrap;
+    /* Add this to allow wrapping */
 }
 
 .footer-credit {
