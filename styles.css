@@ -234,19 +234,19 @@ section h2 {
     margin: 0 auto;
 }
 
-/* Experience Section */
-#experience {
+/* Value Cases Section */
+#value-cases {
     margin-top: 60px;
 }
 
-.experience-grid {
+.value-cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    gap: 20px;
     margin-top: 40px;
 }
 
-.experience-card {
+.value-cases-card {
     background: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 15px;
@@ -255,19 +255,19 @@ section h2 {
     transition: all 0.3s ease;
 }
 
-.experience-card:hover {
+.value-cases-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(168, 85, 247, 0.4);
     background: rgba(255, 255, 255, 0.15);
 }
 
-.experience-card h3 {
+.value-cases-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: aliceblue;
 }
 
-.experience-card p {
+.value-cases-card p {
     line-height: 1.6;
     margin-bottom: 10px;
 }
