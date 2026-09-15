@@ -471,6 +471,11 @@ section h2 {
     text-align: center;
 }
 
+
+
+
+
+/* original video card grid start */
 /* Video card  Grid */
 .video-grid {
     display: flex;
@@ -531,6 +536,7 @@ iframe {
 }
 
 /* --- End Fullscreen clicable */
+/* original video card end */
 
 /* Interactive Video Demo Walkthough Stylling */
 
