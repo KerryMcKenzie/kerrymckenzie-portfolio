@@ -134,7 +134,7 @@
                     SKUs into Coupa while keeping the catalog accurate. Finance wanted spend visibility and compliance;
                     IT wanted a sustainable integration across legacy systems.</p>
                 <p>We designed a three-phase integration: first, a bulk catalog load using Coupa’s SOAP/cXML interface
-                    with schema validation; second, ongoing add/update/remove operations through REST/JSON for
+                    with schema validation; second, ongoing add/update/remove (POST/PATCH/DELETE) operations through REST/JSON for
                     lightweight transactions; and third, webhooks to trigger updates when suppliers changed pricing,
                     availability, or item status, eliminating nightly batch jobs.</p>
                 <p>For the CFO, I positioned the architecture around reducing maverick spend, maintaining negotiated
