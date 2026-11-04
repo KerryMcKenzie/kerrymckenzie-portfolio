@@ -582,7 +582,7 @@ section h2 {
 }
 
 .category-section h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
     color: aliceblue;
     text-align: center;
@@ -816,7 +816,7 @@ iframe {
     }
 
     .category-section h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .video-card {
