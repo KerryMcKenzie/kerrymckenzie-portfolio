@@ -1,2 +1,2 @@
 # kerrymckenzie-portfolio
-Personal Website
+Professional Work Portfolio -- This site showcases my Software Technology work experience, projects, and value proposition.
