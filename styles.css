@@ -125,7 +125,7 @@ body {
 
 .hero-orb--1 {
     width: 400px;
-    height: 420px;
+    height: 520px;
     background: #4387ce;
     top: 5%;
     left: 10%;
@@ -167,11 +167,13 @@ body {
 
 /* Eyebrow: small code-style intro line */
 .hero .hero-eyebrow {
-    font-family: Consolas, 'Courier New', monospace;
+    /* font-family: Consolas, 'Courier New', monospace; */
     font-size: clamp(1.2rem, 2.8vw, 2.0rem);
+    font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #adc7e9;
+     color: aliceblue;
+    /* color: #adc7e9; */
     margin-bottom: 0.75rem;
     animation: fadeInDown 0.8s ease-out both;
 }
@@ -310,7 +312,7 @@ body {
     bottom: 24px;
     left: 50%;
     width: 26px;
-    height: 42px;
+    height: 55px;
     margin-left: -13px;
     border: 2px solid rgba(173, 199, 233, 0.6);
     border-radius: 14px;
