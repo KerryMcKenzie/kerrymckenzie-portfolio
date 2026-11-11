@@ -1,9 +1,85 @@
 /* CSS */
 /* Inherited CSS from styles.css */
 
+/* Return to Home Button */
+/* .home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00509D, #4387ce);
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 1px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+} */
+
+.home-button {
+    display: inline-center;
+    align-items: center;
+    gap: 100px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #00509D, #4387ce);
+    /* background: linear-gradient(135deg, #1e3c72, #7e22ce); */
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.0rem;
+    transition: all 0.3s ease;
+    border: 2px solid aliceblue;
+    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3);
+}
+
+
+.home-button:hover {
+    background: linear-gradient(135deg, #4387ce, #00509D);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Placement: fixed in the top-left corner, like a standard "back" link,
+   so it stays reachable while scrolling through the demos */
+.home-nav {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Arrow slides left on hover to reinforce "go back" */
+.home-button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.home-button:hover span {
+    transform: translateX(-4px);
+}
+
+/* Below 900px: drop the fixed corner placement and center the button
+   in the page flow, directly above the category section's h2 */
+@media (max-width: 900px) {
+    .home-nav {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px; /* offsets the category h1's -30px top margin */
+    }
+
+    .home-button {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+
 .tours {
     text-align: center;
-    color: aliceblue;
+    /* color: aliceblue; */
+    color: #adc7e9;
+    font-size: 1.2rem;
     margin-bottom: 25px;
 }
 
@@ -19,7 +95,8 @@ p strong {
     padding: 0;
     box-sizing: border-box;
 }
-    /* Body Note: Two Color Palette themes:
+
+/* Body Note: Two Color Palette themes:
      a.) background: #00296b, #00509D, #4387ce  
     b.) Button Hovers #00509D, #4387ce  */
 body {
@@ -54,9 +131,10 @@ body {
 }
 
 .projects-header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, #fff, aliceblue);
+    /* background: linear-gradient(90deg, #fff, aliceblue); */
+    background: #adc7e9;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -76,12 +154,14 @@ body {
     text-align: center;
     margin-top: -30px;
     margin-bottom: 10;
+    color: #adc7e9;
 }
 
 .category-section h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: aliceblue;
+    /* color: aliceblue; */
+    color: #adc7e9;
     text-align: center;
 }
 
@@ -106,19 +186,22 @@ body {
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     width: 100%;
-    max-width: 900px;          /* was 450px — the card is wider now */
-  
+    max-width: 900px;
+    /* was 450px — the card is wider now */
+
 }
 
 .video-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   /* centers cards horizontally when they don't fill a row */
+    justify-content: center;
+    /* centers cards horizontally when they don't fill a row */
     gap: 30px;
 }
 
 .video-card {
-    margin: 0 auto;   /* centers the card itself when it's narrower than its container */
+    margin: 0 auto;
+    /* centers the card itself when it's narrower than its container */
 }
 
 
@@ -180,7 +263,8 @@ body {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    display: block;            /* kills the stray gap under inline video */
+    display: block;
+    /* kills the stray gap under inline video */
 }
 
 /* MOBILE — stack the two columns -- new code 091525 */
@@ -328,6 +412,7 @@ body {
 
     .category-section h2 {
         font-size: 1.5rem;
+        color: #adc7e9;
     }
 
     .video-card {
@@ -338,6 +423,3 @@ body {
     iframe {
         height: 75px;
     }
-
-
-

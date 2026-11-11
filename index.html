@@ -12,13 +12,26 @@
 <body>
     <!-- Hero Section -->
     <div class="hero">
-        <!-- <h1>Kerry McKenzie</h1> -->
-         <p><strong><span style="font-size: 38px; color: #adc7e9"> // Hello, I'm Kerry McKenzie,</span></strong></p>
-            <p><strong><span style="font-size: 32px; color: #adc7e9">a Solutions Consultant in the Fintech Software Space //</span></strong></p>
-   
+        <!-- Decorative background: faint grid + drifting glow orbs -->
+        <div class="hero-bg" aria-hidden="true">
+            <span class="hero-orb hero-orb--1"></span>
+            <span class="hero-orb hero-orb--2"></span>
+            <span class="hero-orb hero-orb--3"></span>
+        </div>
 
-        <p>I Align Technical Solutions to Strategic Business Value:</p>
-        <a href="#value-cases" class="hero-cta">Explore Business Value</a>
+        <p class="hero-eyebrow">// Hello, I'm</p>
+        <h1 class="hero-name">Kerry McKenzie</h1>
+        <p class="hero-role">Solutions Consultant, Fintech Software<span class="hero-cursor" aria-hidden="true"></span></p>
+
+        <p class="hero-statement">I align technical solutions to <span class="hero-highlight">strategic business value.</span></p>
+        <div class="hero-cta-row">
+            <!-- <svg class="hero-arrow" viewBox="0 0 64 32" aria-hidden="true">
+                <path d="M2 11h36V2l24 14-24 14v-9H2z" />
+            </svg> -->
+            <a href="#value-cases" class="hero-cta">Explore Business Value</a>
+        </div>
+
+        <a href="#about" class="hero-scroll" aria-label="Scroll to About section"></a>
     </div>
 
     <!-- Fixed Navigation -->
@@ -26,7 +39,7 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#value-cases">Value</a></li>
-            <li><a href="projects.html" target="_blank">Projects</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="Kerry McKenzie Resume 2026.pdf" target="blank">Resume</a></li>
             <!-- <li><a href="#contact">Contact</a></li> -->
 
@@ -36,44 +49,84 @@
     <!-- About Section -->
     <section id="about">
         <h2>Strategic Pre-Sales Approach</h2>
-        <p>In a pre-sales capacity, I work closely with our
-            sales teams throughout the deal cycle, translating solutions and technical architecture into business value
-            that resonates
-            with both finance and IT stakeholders.</p>
-        <br>
-        <p>Over the past eight years, I've driven customer value across the payments and fintech spend management
-            ecosystem. Such examples are:
-            Travel & Expense, Business Spend Management, B2B/Corporate Card programs and Integrated Embedded
-            Payments at
-            <span class="company-logos">
-                <a href="https://www.coupa.com" target="_blank">Coupa</a>,
-                <a href="https://www.emburse.com" target="_blank">Emburse</a> and
-                <a href="https://www.elavon.com" target="_blank">Elavon</a>.
-            </span>
-        </p>
+
+        <!-- Each .about-item fades in one after another when the section scrolls into view (see script at bottom) -->
+        <div class="about-list">
+
+            <!-- 1. Team / partnership -->
+            <div class="about-item">
+                <span class="about-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </span>
+                <p>In a pre-sales capacity, I work closely with our sales teams throughout the deal cycle, translating
+                    solutions and technical architecture into business value that resonates with both finance and IT
+                    stakeholders.</p>
+            </div>
+
+            <!-- 2. Payments experience -->
+            <div class="about-item">
+                <span class="about-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <path d="M2 10h20" />
+                        <path d="M6 15h4" />
+                    </svg>
+                </span>
+                <p>Over the past eight years, I've driven customer value across the payments and fintech spend management
+                    ecosystem. Such examples are: Travel &amp; Expense, Business Spend Management, B2B/Corporate Card
+                    programs and Integrated Embedded Payments at
+                    <span class="company-logos">
+                        <a href="https://www.coupa.com" target="_blank">Coupa</a>,
+                        <a href="https://www.emburse.com" target="_blank">Emburse</a> and
+                        <a href="https://www.elavon.com" target="_blank">Elavon</a>.
+                    </span>
+                </p>
+            </div>
+
+            <!-- 3. Day-to-day solutions & integration (gear spins slowly) -->
+            <div class="about-item">
+                <span class="about-icon about-icon--gear" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                </span>
+                <div>
+                    <p>Day to day, I am solving customer challenges within the embedded payments ecosystem, delivering
+                        strategic functional SaaS demos, articulating solution value, architecture, and application
+                        security.</p>
+                    <p>I translate integration strategy (flat-file via sFTP or connectivity via REST APIs) into seamless
+                        interoperability with clients' financial systems (ERP).</p>
+                </div>
+            </div>
+
+            <!-- <p>I'm most proud of the work solving customer challenges within the payments ecosystem itself, with a
+                consistent thread of deep embedded payments and
+                integration into clients' financial systems of record (ERP), where the real business
+                case
+                gets made or lost.</p> -->
+
+            <!-- 4. "Across the bridge" (bridge draws itself in) -->
+            <div class="about-item">
+                <span class="about-icon about-icon--bridge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path pathLength="1" d="M2 8h20" />
+                        <path pathLength="1" d="M2 17h3a7 7 0 0 1 14 0h3" />
+                        <path pathLength="1" d="M5 8v9M19 8v9M9 8v2.7M15 8v2.7M12 8v2" />
+                    </svg>
+                </span>
+                <p>My strength is getting prospects across the bridge, connecting technical capability to the financial
+                    metrics executives care about, and code-switching fluently between finance and IT audiences in the
+                    same room. That means building demos that allow clients to envision the full potential of the
+                    solution in their own environment.</p>
+            </div>
+
         </div>
-
-        <br>
-        <p>Day to day, I am solving customer challenges within the embedded payments ecosystem, delivering strategic
-            functional
-            SaaS demos, articulating solution value, architecture, and application security.</p>
-        <p>I translate integration strategy (flat-file via sFTP or connectivity via REST
-            APIs) into seamless interoperability with clients' financial systems (ERP).</p>
-
-
-        <!-- <p>I'm most proud of the work solving customer challenges within the payments ecosystem itself, with a
-            consistent thread of deep embedded payments and
-            integration into clients' financial systems of record (ERP), where the real business
-            case
-            gets made or lost.</p> -->
-        <br>
-        <p>My strength is getting prospects across the bridge, connecting technical capability to the financial metrics
-            executives care about, and code-switching fluently between finance and IT audiences in the same room. That
-            means building demos that allow clients to envision the full potential of the
-            solution
-            in their own environment.</p>
-
-        <br>
     </section>
 
     <!-- value-cases Section -->
@@ -460,6 +513,32 @@
                     btn.querySelector('.read-more-label').textContent = isOpen ? 'Read Less' : 'Read More';
                 });
             });
+        </script>
+
+        <!-- About section: reveal each row separately as it scrolls into view -->
+        <script>
+            (function () {
+                var list = document.querySelector('.about-list');
+                if (!list || !('IntersectionObserver' in window)) return; // without support, content simply shows
+
+                list.classList.add('reveal-ready'); // hides items only once JS is confirmed running
+
+                var observer = new IntersectionObserver(function (entries) {
+                    var order = 0; // rows entering at the same moment still play one after another
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.setProperty('--d', (order * 0.3) + 's');
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target); // play once per row
+                            order++;
+                        }
+                    });
+                }, { threshold: 0.25 });
+
+                list.querySelectorAll('.about-item').forEach(function (item) {
+                    observer.observe(item);
+                });
+            })();
         </script>
 </body>
 

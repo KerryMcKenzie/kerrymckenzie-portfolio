@@ -5,7 +5,7 @@
 
 .tours {
     text-align: center;
-    color: aliceblue;
+    color: #adc7e9;
     margin-bottom: 25px;
 }
 
@@ -14,7 +14,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-    /* Body Note: Two Color Palette themes:
+
+/* Body Note: Two Color Palette themes:
      a.) background: #00296b, #00509D, #4387ce  
     b.) Button Hovers #00509D, #4387ce  */
 body {
@@ -30,8 +31,8 @@ body {
 .company-logos a {
     text-decoration: none;
     display: inline-block;
-      color: aliceblue;
-      font-weight: bold;
+    color: aliceblue;
+    font-weight: bold;
 }
 
 /* Hero Section */
@@ -88,6 +89,267 @@ body {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 
+}
+
+/* ===== Hero refresh ===== */
+.hero {
+    min-height: 85vh;
+    height: auto;
+    padding: 110px 20px 80px;
+    /* clears the fixed nav */
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Background layer: faint grid that fades out toward the edges */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(173, 199, 233, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(173, 199, 233, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.55;
+    animation: heroDrift 18s ease-in-out infinite alternate;
+}
+
+.hero-orb--1 {
+    width: 400px;
+    height: 420px;
+    background: #4387ce;
+    top: 5%;
+    left: 10%;
+}
+
+.hero-orb--2 {
+    width: 300px;
+    height: 300px;
+    background: #00509d;
+    bottom: 0;
+    right: 12%;
+    animation-duration: 22s;
+    animation-delay: -6s;
+}
+
+.hero-orb--3 {
+    width: 300px;
+    height: 300px;
+    background: #adc7e9;
+    top: 35%;
+    right: 35%;
+    opacity: 0.25;
+    animation-duration: 26s;
+}
+
+@keyframes heroDrift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -30px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-30px, 25px) scale(0.95);
+    }
+}
+
+/* Eyebrow: small code-style intro line */
+.hero .hero-eyebrow {
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: clamp(1.2rem, 2.8vw, 2.0rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #adc7e9;
+    margin-bottom: 0.75rem;
+    animation: fadeInDown 0.8s ease-out both;
+}
+
+/* Name: large gradient headline */
+.hero .hero-name {
+    font-size: clamp(2.6rem, 8vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    /* gradient text only paints inside the box; extra bottom padding keeps the "y" tail from being clipped */
+    padding-bottom: 0.15em;
+    margin-bottom: calc(2.0rem - 0.15em);
+    background: linear-gradient(90deg, #ffffff 0%, #adc7e9 50%, #4387ce 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.35));
+    animation: fadeInDown 1s ease-out 0.15s both;
+}
+
+/* Role line with blinking cursor */
+.hero .hero-role {
+    font-size: clamp(1.15rem, 3vw, 1.75rem);
+    font-weight: 600;
+    color: #adc7e9;
+    margin-bottom: .8rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-divider {
+    color: #4387ce;
+    margin: 0 0.4em;
+}
+
+.hero-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    margin-left: 6px;
+    vertical-align: -0.12em;
+    background: #4387ce;
+    animation: heroBlink 1s steps(1) infinite;
+}
+
+@keyframes heroBlink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Value statement with accent underline */
+.hero .hero-statement {
+    font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+    max-width: 640px;
+    color: aliceblue;
+    margin-bottom: 2.25rem;
+    animation: fadeInUp 1s ease-out 0.45s both;
+}
+
+.hero-highlight {
+    font-weight: 700;
+    background: linear-gradient(transparent 62%, rgba(67, 135, 206, 0.6) 62%);
+    padding: 0 2px;
+}
+
+/* CTA row: animated arrow leading into a squared-off button */
+.hero-cta-row {
+    position: relative;
+    width: fit-content;
+    /* row is exactly as wide as the button... */
+    margin: 0 auto;
+    /* ...so the button sits on the page's center line */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-cta-row .hero-cta {
+    border-radius: 6px;
+    animation: none;
+    /* the row handles the entrance, so the hover lift works */
+}
+
+.hero-arrow {
+    /* Hangs off the button's left edge without shifting the button */
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-top: -16px;
+    margin-right: 18px;
+    width: 64px;
+    height: 32px;
+    fill: #4387ce;
+    filter: drop-shadow(0 0 8px rgba(67, 135, 206, 0.6));
+    animation: heroArrowNudge 1.4s ease-in-out infinite;
+}
+
+/* Arrow pushes toward the button harder on hover */
+.hero-cta-row:hover .hero-arrow {
+    fill: #adc7e9;
+    animation-duration: 0.7s;
+}
+
+@keyframes heroArrowNudge {
+
+    0%,
+    100% {
+        transform: translateX(-6px);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateX(8px);
+        opacity: 1;
+    }
+}
+
+/* Phones: not enough room beside the button, so the arrow sits above it pointing down */
+@media (max-width: 600px) {
+    .hero-arrow {
+        position: static;
+        margin: 0 0 12px;
+        width: 44px;
+        height: 22px;
+        rotate: 90deg;
+        /* points down; the nudge animation then moves it up/down */
+    }
+}
+
+/* Scroll cue */
+.hero-scroll {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    width: 26px;
+    height: 42px;
+    margin-left: -13px;
+    border: 2px solid rgba(173, 199, 233, 0.6);
+    border-radius: 14px;
+}
+
+.hero-scroll::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    margin-left: -2px;
+    border-radius: 2px;
+    background: #adc7e9;
+    animation: heroScroll 1.8s ease-in-out infinite;
+}
+
+@keyframes heroScroll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(16px);
+        opacity: 0;
+    }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-orb,
+    .hero-cursor,
+    .hero-arrow,
+    .hero-scroll::after {
+        animation: none;
+    }
 }
 
 /* Sticky Navigation */
@@ -165,18 +427,18 @@ body {
     display: inline-block;
     padding: 12px 28px;
     /* Creates the bubble shape */
-    background: rgba(30, 60, 114, 0.1);
-    /* Light background */
-    border-radius: 50px;
-    /* Makes it pill/bubble shaped */
-    color: aliceblue;
-    /* color: #1e3c72; */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.5s ease;
-    /* border: 2px solid transparent; */
-    border: 2px solid aliceblue;
+background: rgba(30, 60, 114, 0.1);
+/* Light background */
+border-radius: 50px;
+/* Makes it pill/bubble shaped */
+color: aliceblue;
+/* color: #1e3c72; */
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+transition: all 0.5s ease;
+/* border: 2px solid transparent; */
+border: 2px solid aliceblue;
 /* } * */
 
 /* .fixed-nav ul li a:hover {
@@ -184,9 +446,9 @@ body {
     color: aliceblue;
     transform: translateY(-3px) scale(1.02);
     /* ← Change to 1.05 for 2% subtle growth */
-    /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-} */ 
- 
+/* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+} */
+
 
 /* original bubble-style code end 091526*/
 
@@ -194,7 +456,7 @@ body {
 /* Base nav link — the ul li version below is more specific,
    so this rule's color never actually wins. Keeping it simple. */
 
-   .fixed-nav a {
+.fixed-nav a {
     text-decoration: none;
     font-weight: 600;
     position: relative;
@@ -223,9 +485,10 @@ body {
     left: 70%;
     width: 0;
     height: 2px;
-    background: aliceblue;   /* same color as the link text */
+    background: aliceblue;
+    /* same color as the link text */
     transition: width 0.3s ease, left 0.3s ease;
- 
+
 }
 
 .fixed-nav ul li a:hover {
@@ -269,10 +532,11 @@ section {
 }
 
 section h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
-    background: linear-gradient(90deg, #fff, aliceblue);
+    /* background: linear-gradient(90deg, #fff, aliceblue); */
+    background: linear-gradient(90deg, #adc7e9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -295,6 +559,136 @@ section h2 {
     margin: 0 auto;
 }
 
+/* ===== About: icon rows with staggered reveal ===== */
+.about-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.about-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+#about .about-item p {
+    margin: 0;
+}
+
+#about .about-item p + p {
+    margin-top: 0.75rem;
+}
+
+.about-icon {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    border: 1px solid rgba(173, 199, 233, 0.35);
+    background: rgba(67, 135, 206, 0.18);
+    box-shadow: 0 0 18px rgba(67, 135, 206, 0.25);
+}
+
+.about-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: #adc7e9;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Gear turns slowly, continuously */
+.about-icon--gear svg {
+    animation: aboutGearSpin 12s linear infinite;
+}
+
+@keyframes aboutGearSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Reveal animation (only applies once the script adds .reveal-ready) ---
+   Each row is revealed separately as it scrolls into view. The script sets
+   --d (start delay) on each row so rows entering together still play in order. */
+
+/* Icon pops in */
+.about-list.reveal-ready .about-icon {
+    opacity: 0;
+    transform: scale(0.6);
+    transition:
+        opacity 0.5s ease-out var(--d, 0s),
+        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s); /* slight "pop" overshoot */
+}
+
+/* Each <p> slides up and fades in on its own */
+.about-list.reveal-ready .about-item p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.7s ease-out calc(var(--d, 0s) + 0.1s),
+        transform 0.7s ease-out calc(var(--d, 0s) + 0.1s);
+}
+
+/* Second paragraph in the same row (gear row) follows the first */
+.about-list.reveal-ready .about-item p + p {
+    transition-delay: calc(var(--d, 0s) + 0.45s);
+}
+
+/* Bridge starts undrawn, then draws after its icon appears */
+.about-list.reveal-ready .about-icon--bridge path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1.2s ease-out calc(var(--d, 0s) + 0.3s);
+}
+
+/* Visible state (added per row by the script) */
+.about-list.reveal-ready .about-item.is-visible .about-icon,
+.about-list.reveal-ready .about-item.is-visible p {
+    opacity: 1;
+    transform: none;
+}
+
+.about-list.reveal-ready .about-item.is-visible .about-icon--bridge path {
+    stroke-dashoffset: 0;
+}
+
+/* Phones: smaller icons */
+@media (max-width: 600px) {
+    .about-item {
+        grid-template-columns: 44px 1fr;
+        gap: 1rem;
+    }
+
+    .about-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+    }
+
+    .about-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-icon--gear svg {
+        animation: none;
+    }
+
+    .about-list.reveal-ready .about-item p,
+    .about-list.reveal-ready .about-icon,
+    .about-list.reveal-ready .about-icon--bridge path {
+        transition: none;
+    }
+}
+
 /* Value Cases Section */
 #value-cases {
     margin-top: 60px;
@@ -306,13 +700,18 @@ section h2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
     margin-top: 40px;
-    align-items: start;          /* opening one card doesn't stretch its row-mates */
-    max-width: 1130px;      /* NEW: caps the total width of both cards */
-    margin-inline: auto;    /* NEW: keeps the grid centered */
+    align-items: start;
+    /* opening one card doesn't stretch its row-mates */
+    max-width: 1130px;
+    /* NEW: caps the total width of both cards */
+    margin-inline: auto;
+    /* NEW: keeps the grid centered */
 }
 
 @media (max-width: 760px) {
-    .value-cases-grid { grid-template-columns: 1fr; }
+    .value-cases-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Every card shares the exact same color / hover / shadow */
@@ -339,7 +738,8 @@ section h2 {
     line-height: 1.35;
     margin-bottom: 10px;
     color: aliceblue;
-    min-height: 3.5em;           /* keeps logos lined up across a row */
+    min-height: 3.5em;
+    /* keeps logos lined up across a row */
 }
 
 .value-cases-card p {
@@ -378,7 +778,8 @@ section h2 {
     max-width: 85%;
     max-height: 40px;
     object-fit: contain;
-    mix-blend-mode: multiply;    /* blends the PNGs' white/grey backgrounds into aliceblue */
+    mix-blend-mode: multiply;
+    /* blends the PNGs' white/grey backgrounds into aliceblue */
 }
 
 /* Elavon is taller (arc above the wordmark), so give it a bit more height */
@@ -393,7 +794,8 @@ section h2 {
     width: 220px;
     height: 64px;
     object-fit: cover;
-    margin-left: -36px;          /* trims the PNG's left padding so it lines up with the link */
+    margin-left: -36px;
+    /* trims the PNG's left padding so it lines up with the link */
 }
 
 /* Read more link-style button */
@@ -420,12 +822,13 @@ section h2 {
     transition: transform 0.3s ease;
 }
 
-.read-more-btn:hover .read-more-arrow {
+*/ .read-more-btn:hover .read-more-arrow {
     transform: translateX(4px);
 }
 
 .value-cases-card.is-open .read-more-arrow {
-    transform: rotate(-90deg);   /* arrow points up when open */
+    transform: rotate(-90deg);
+    /* arrow points up when open */
 }
 
 /* Expanding details panel (smooth height animation) */
@@ -437,7 +840,8 @@ section h2 {
 
 .value-case-details-inner {
     overflow: hidden;
-    visibility: hidden;          /* hides collapsed text from screen readers / tab focus */
+    visibility: hidden;
+    /* hides collapsed text from screen readers / tab focus */
     transition: visibility 0.4s;
 }
 
@@ -512,7 +916,8 @@ section h2 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-     background: linear-gradient(135deg, #00296b 35%, #003f88 45%, #00509d 100%);
+    /* background: linear-gradient(135deg, #00296b 35%, #003f88 45%, #00509d 100%); */
+    background: #00509d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -591,7 +996,8 @@ section h2 {
 .category-section h2 {
     font-size: 1.5rem;
     margin-bottom: 30px;
-    color: aliceblue;
+    /* color: aliceblue; */
+    color: #adc7e9;
     text-align: center;
 }
 
@@ -701,7 +1107,6 @@ iframe {
     gap: 10px;
     padding: 15px 35px;
     background: linear-gradient(135deg, #00509D, #4387ce);
-    /* background: linear-gradient(135deg, #1e3c72, #7e22ce); */
     color: aliceblue;
     text-decoration: none;
     border-radius: 50px;
@@ -866,7 +1271,7 @@ iframe {
     text-align: center;
     font-size: .9rem;
     color: #1e3c72;
-    margin: -10px 10px 5px 10px; 
+    margin: -10px 10px 5px 10px;
     /* top right bottom left */
-    padding: 0px 0px; 
+    padding: 0px 0px;
 }
