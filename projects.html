@@ -25,7 +25,7 @@
 
         <!-- Return to Home -->
         <nav class="home-nav" aria-label="Back to home">
-            <a href="index.html" class="home-button"><span aria-hidden="true">&larr;</span> Return to Home</a>
+            <a href="index.html" class="home-button"><span class="home-num" aria-hidden="true">//</span><span>Return to Home</span></a>
         </nav>
 
 
@@ -381,6 +381,51 @@
     </div>
 
     </div>
+
+    <!-- ===== NEW: Scroll-up widget (same as home page: bottom-right) =====
+         Hidden at the top; slides in after scrolling. Bottom bar shows scroll progress.
+         To revert: delete this block (widget + script) and its CSS block in styles-projects.css. -->
+    <a href="#" class="scroll-top" aria-label="Scroll back to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 15l6-6 6 6" />
+        </svg>
+        <span class="scroll-top-label">// scroll up</span>
+        <span class="scroll-top-progress" aria-hidden="true"></span>
+    </a>
+
+    <script>
+        (function () {
+            var btn = document.querySelector('.scroll-top');
+            if (!btn) return;
+
+            var ticking = false;
+
+            function update() {
+                var y = window.scrollY;
+                var max = document.documentElement.scrollHeight - window.innerHeight;
+                btn.classList.toggle('is-visible', y > window.innerHeight * 0.6);
+                btn.style.setProperty('--progress', max > 0 ? Math.min(y / max, 1) : 0);
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    requestAnimationFrame(update);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            update();
+
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+                btn.blur();
+            });
+        })();
+    </script>
+    <!-- ===== END Scroll-up widget ===== -->
 
 </body>
 
