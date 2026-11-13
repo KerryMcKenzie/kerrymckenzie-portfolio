@@ -653,18 +653,18 @@ body {
     display: inline-block;
     padding: 12px 28px;
     /* Creates the bubble shape */
-background: rgba(30, 60, 114, 0.1);
+/* background: rgba(30, 60, 114, 0.1); */
 /* Light background */
-border-radius: 50px;
+/* border-radius: 50px; */
 /* Makes it pill/bubble shaped */
-color: aliceblue;
+/* color: aliceblue; */
 /* color: #1e3c72; */
-text-decoration: none;
+/* text-decoration: none;
 font-weight: 600;
 font-size: 1rem;
-transition: all 0.5s ease;
+transition: all 0.5s ease; */
 /* border: 2px solid transparent; */
-border: 2px solid aliceblue;
+/* border: 2px solid aliceblue; */
 /* } * */
 
 /* .fixed-nav ul li a:hover {
@@ -1085,7 +1085,7 @@ section h2 {
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    padding: 60px 40px;
+    padding: 20px 40px;
     backdrop-filter: blur(10px);
     margin: 40px auto;
 }
