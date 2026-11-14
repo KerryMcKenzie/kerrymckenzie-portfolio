@@ -201,7 +201,7 @@ body {
 
 .video-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 5px 15px rgba(173, 199, 233, 0.4);
     background: rgba(255, 255, 255, 0.15);
 }
 
@@ -280,9 +280,12 @@ body {
 
 /* Interactive Video Demo Walkthough Styling */
 
+/* background: rgba(255, 255, 255, 0.1); */
+
 .interactive-demo-card {
-    background: linear-gradient(135deg, rgba(30, 60, 114, 0.2), rgba(126, 34, 206, 0.2));
-    border: 2px solid rgba(233, 213, 255, 0.3);
+    /* background: linear-gradient(135deg, rgba(30, 60, 114, 0.2), rgba(126, 34, 206, 0.2)); */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(173, 199, 233, 0.45);
     min-height: 75px;
     display: flex;
     flex-direction: column;
@@ -324,13 +327,13 @@ body {
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    border: 2px solid aliceblue;
-    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3);
+    border: 1px solid aliceblue;
+    box-shadow: 0 5px 15px rgba(173, 199, 233, 0.4);
 }
 
 .demo-button:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(126, 34, 206, 0.5);
+    box-shadow: 0 5px 15px rgba(173, 199, 233, 0.4);
     background: linear-gradient(135deg, #265fc9, #76a1da);
 }
 
@@ -417,7 +420,9 @@ body {
     iframe {
         height: 75px;
     }
-} /* closes @media (max-width: 480px), which was missing its closing brace */
+}
+
+/* closes @media (max-width: 480px), which was missing its closing brace */
 
 /* ===== NEW: Return to Home in the hero step-button style =====
    Matches the "02 | Explore Business Value" button on the home page (outline, gradient on hover).
@@ -447,7 +452,7 @@ body {
     border-color: aliceblue;
     color: aliceblue;
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(173, 199, 233, 0.4);
 }
 
 /* cancel the old arrow-slide effect */
@@ -476,6 +481,7 @@ body {
         padding-right: 10px;
     }
 }
+
 /* ===== END Return to Home ===== */
 
 
@@ -487,6 +493,7 @@ body {
         linear-gradient(90deg, rgba(173, 199, 233, 0.045) 1px, transparent 1px) 0 0 / 48px 48px,
         linear-gradient(120deg, #00296b 35%, #003f88 45%, #00509d 100%);
 }
+
 /* ===== END Page-wide grid theme ===== */
 
 
@@ -510,6 +517,7 @@ body {
         padding-right: 0;
     }
 }
+
 /* ===== END "//" marker ===== */
 
 
@@ -595,9 +603,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .scroll-top,
     .scroll-top svg {
         transition: none;
     }
 }
+
 /* ===== END Scroll-up widget ===== */
