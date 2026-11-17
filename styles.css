@@ -829,12 +829,12 @@ section h2 {
 }
 
 #about .about-item p+p {
-    margin-top: 0.75rem;
+    margin-top: .75rem;
 }
 
 .about-icon {
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
     display: grid;
     place-items: center;
     border-radius: 5px;
@@ -843,9 +843,10 @@ section h2 {
     box-shadow: 0 0 18px rgba(67, 135, 206, 0.25);
 }
 
+/* svg is half the size of the icon */
 .about-icon svg {
-    width: 23px;
-    height: 23px;
+    width: 21px;
+    height: 21px;
     fill: none;
     stroke: #adc7e9;
     stroke-width: 1.75;
@@ -1610,7 +1611,7 @@ body {
 .tech-footer-credit {
     margin: 0;
     font-family: Consolas, 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: .8rem;
     letter-spacing: 0.05em;
     color: #adc7e9;
     opacity: 0.85;
