@@ -33,7 +33,7 @@ body {
     display: inline-block;
     color: #fff;
     font-weight: bold;
-     max-width: 640px;
+    max-width: 640px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
