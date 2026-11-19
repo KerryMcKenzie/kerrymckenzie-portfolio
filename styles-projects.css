@@ -4,13 +4,12 @@
 .home-nav {
     border-radius: 6px;
     animation: none;
-    */
     /* the row handles the entrance, so the hover lift works */
 }
 
 
 .home-button {
-    display: inline-center;
+    display: inline-flex;
     align-items: center;
     gap: 100px;
     padding: 10px 18px;
@@ -25,7 +24,7 @@
     box-shadow: 0 5px 15px rgba(173, 199, 233, 0.4);
 }
 
-*/ .home-button:hover {
+.home-button:hover {
     background: linear-gradient(135deg, #00509D, #4387ce);
     transform: translateY(-2px);
     /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
@@ -59,8 +58,7 @@
         position: static;
         display: flex;
         justify-content: center;
-        margin-bottom: 50px;
-        /* offsets the category h1's -30px top margin */
+        margin-bottom: 30px;
     }
 
     .home-button {
@@ -145,11 +143,15 @@ body {
     margin-bottom: 60px;
 }
 
-.category-section h1 {
-    text-align: center;
-    margin-top: -30px;
-    margin-bottom: 10;
-    color: #adc7e9;
+/* Section divider — replaces the old <h1>_____</h1> underscore rule.
+   Scales with the screen, so it never overflows or sits off-center on mobile. */
+.section-divider {
+    width: min(560px, 100%);
+    height: 0;
+    margin: 0 auto 10px;
+    border: none;
+    border-top: 2px solid #adc7e9;
+    opacity: 0.8;
 }
 
 .category-section h2 {
@@ -266,7 +268,14 @@ body {
 @media (max-width: 680px) {
     .video-card {
         flex-direction: column;
+        gap: 20px;
         padding: 20px;
+    }
+
+    .card-info,
+    .card-media {
+        width: 100%;
+        flex-basis: auto;
     }
 
     .card-info h3 {
@@ -289,17 +298,47 @@ body {
     border: 1px solid rgba(173, 199, 233, 0.45);
     min-height: 75px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* description left, launch button right — mirrors the video cards */
+    align-items: center;
     justify-content: space-between;
 }
 
+.interactive-demo-card .card-info {
+    flex: 1 1 60%;
+}
+
+/* Right column sits at the card's right edge (card-info grows to fill the rest);
+   inside it, the caption is centered over the button. */
 .demo-content {
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    text-align: center;
     padding: 20px 0;
+}
+
+/* MOBILE — stack description above the button */
+@media (max-width: 680px) {
+    .interactive-demo-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .demo-content {
+        padding: 0;
+    }
+
+    /* full-width button that can wrap, so it never overflows a narrow phone */
+    .demo-button {
+        width: 100%;
+        justify-content: center;
+        white-space: normal;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
 }
 
 .demo-icon {
@@ -309,16 +348,17 @@ body {
 }
 
 .demo-description {
-    font-size: 1.1rem;
-    color: aliceblue;
-    margin-bottom: 25px;
-    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(240, 248, 255, 0.85);
+    margin-bottom: 20px;
+    max-width: 240px;
 }
 
 .demo-button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
     padding: 15px 35px;
     background: linear-gradient(135deg, #00509D, #4387ce);
     /* background: linear-gradient(135deg, #1e3c72, #7e22ce); */
@@ -416,14 +456,7 @@ body {
     .video-card {
         max-width: 100%;
     }
-
-    .video-card video,
-    iframe {
-        height: 75px;
-    }
 }
-
-/* closes @media (max-width: 480px), which was missing its closing brace */
 
 /* ===== NEW: Return to Home in the hero step-button style =====
    Matches the "02 | Explore Business Value" button on the home page (outline, gradient on hover).
