@@ -188,17 +188,26 @@ body {
 
 }
 
-/* Two-across grid — see "Two-across project grid" block further down */
+/* ONE-ACROSS (active): cards listed in a single centered column.
+   The 20px gap replaces the old <br> tags between cards. */
+.video-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* TWO-ACROSS (parked — to switch back: delete the one-across rule above,
+   uncomment this rule, and uncomment the "Two-across project grid" block further down)
+
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
     max-width: 1130px;
-    /* same cap as the home-page value cases */
     margin: 0 auto;
     align-items: stretch;
-    /* cards in a row share the same height */
 }
+*/
 
 .video-card {
     margin: 0 auto;
@@ -408,10 +417,12 @@ body {
 /* End Interactive Video Demo Walkthough */
 
 
-/* ===== Two-across project grid =====
+/* ===== Two-across project grid (PARKED — commented out) =====
    Inside .video-grid each card stacks: video on top, details below.
-   To revert: delete this block, reset .video-grid above to flex,
-   and remove the <div class="video-grid"> wrappers in projects.html. */
+   An odd card out lands in the left column (same as the home-page value cases).
+   To switch back on: remove the opening and closing comment markers around this
+   block, and swap the .video-grid rule near the top of the file (see notes there).
+
 .video-grid .video-card {
     flex-direction: column;
     align-items: stretch;
@@ -420,7 +431,6 @@ body {
     margin: 0;
 }
 
-/* video first, full card width, uniform 16:9 frame */
 .video-grid .card-media {
     order: -1;
     flex: none;
@@ -433,8 +443,6 @@ body {
     background: rgba(0, 20, 60, 0.6);
 }
 
-/* details column fills the rest; description grows so the
-   "View full screen" link + tags line up at the bottom of each row */
 .video-grid .card-info {
     flex: 1 1 auto;
     display: flex;
@@ -445,7 +453,6 @@ body {
     flex-grow: 1;
 }
 
-/* Interactive demo cards: text on top, caption + button pinned to the bottom */
 .video-grid .interactive-demo-card {
     flex-direction: column;
     align-items: stretch;
@@ -456,9 +463,6 @@ body {
     padding: 0;
 }
 
-/* Odd card out simply lands in the left column (same as the home-page value cases) */
-
-/* Tablet / phone: single column */
 @media (max-width: 900px) {
     .video-grid {
         grid-template-columns: 1fr;
@@ -466,7 +470,7 @@ body {
     }
 }
 
-/* ===== END Two-across project grid ===== */
+===== END Two-across project grid ===== */
 
 /* ---End Projects Styling --- */
 
