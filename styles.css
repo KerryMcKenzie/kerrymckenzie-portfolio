@@ -1007,9 +1007,25 @@ section h2 {
     margin-bottom: 10px;
 }
 
+/* Solution tags — pill chips, same look as the projects page .tag */
 .value-case-solutions {
-    font-size: 0.95rem;
-    min-height: 3.2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 8px;
+    margin-bottom: 4px;
+    min-height: 66px;
+    /* room for two rows of chips, keeps the logo panels lined up across a row */
+}
+
+.value-case-solutions .tag {
+    padding: 5px 14px;
+    border-radius: 50px;
+    background: rgba(30, 60, 114, 0.5);
+    border: 1px solid rgba(240, 248, 255, 0.25);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: aliceblue;
 }
 
 /* Light panel holding the logo + "Read more" link (matches mock-up) */
@@ -1058,38 +1074,136 @@ section h2 {
     /* trims the PNG's left padding so it lines up with the link */
 }
 
-/* Read more link-style button */
+/* ===== Read More — terminal-style command button =====
+   Dark console chip with a "//" marker, a scan-line sweep on hover,
+   and a blinking cursor while hovered or open.
+   The label text ("Read More" / "Read Less") is still swapped by the JS. */
 .read-more-btn {
-    background: none;
-    border: none;
-    padding: 4px 0;
-    font: inherit;
-    font-size: 1.2rem;
-    color: #1565c0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px 10px 14px;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #adc7e9;
+    background: linear-gradient(135deg, #00296b, #003f88);
+    border: 1px solid #4387ce;
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(0, 41, 107, 0.25);
     cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* scan-line that sweeps across on hover */
+.read-more-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 30%, rgba(173, 199, 233, 0.35) 50%, transparent 70%);
+    transform: translateX(-110%);
+    pointer-events: none;
+}
+
+/* "//" marker before the label (matches the nav links / Return to Home) */
+.read-more-label::before {
+    content: "//";
+    margin-right: 8px;
+    color: #4387ce;
     transition: color 0.3s ease;
+}
+
+/* terminal cursor after the label — only shows while hovered / open */
+.read-more-label::after {
+    content: "_";
+    margin-left: 2px;
+    color: #4387ce;
+    opacity: 0;
+}
+
+/* arrow */
+.read-more-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    font-size: 1.7rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
 }
 
 .read-more-btn:hover,
 .read-more-btn:focus-visible {
-    color: #7e22ce;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    color: aliceblue;
+    border-color: aliceblue;
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 3px rgba(67, 135, 206, 0.25), 0 6px 16px rgba(0, 41, 107, 0.35);
+    outline: none;
 }
 
-.read-more-arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
+.read-more-btn:hover::before,
+.read-more-btn:focus-visible::before {
+    transform: translateX(110%);
+    transition: transform 0.7s ease;
 }
 
-*/ .read-more-btn:hover .read-more-arrow {
-    transform: translateX(4px);
+.read-more-btn:hover .read-more-label::before,
+.value-cases-card.is-open .read-more-label::before {
+    color: #adc7e9;
+}
+
+.read-more-btn:hover .read-more-label::after,
+.read-more-btn:focus-visible .read-more-label::after,
+.value-cases-card.is-open .read-more-label::after {
+    animation: read-more-blink 1s steps(1) infinite;
+}
+
+.read-more-btn:hover .read-more-arrow {
+    transform: translateX(3px);
+}
+
+/* open state: brighter border, arrow points up */
+.value-cases-card.is-open .read-more-btn {
+    color: aliceblue;
+    border-color: #adc7e9;
 }
 
 .value-cases-card.is-open .read-more-arrow {
     transform: rotate(-90deg);
-    /* arrow points up when open */
 }
+
+@keyframes read-more-blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .read-more-btn,
+    .read-more-btn::before,
+    .read-more-arrow {
+        transition: none;
+    }
+
+    .read-more-btn:hover .read-more-label::after,
+    .read-more-btn:focus-visible .read-more-label::after,
+    .value-cases-card.is-open .read-more-label::after {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* ===== END Read More ===== */
 
 /* Expanding details panel (smooth height animation) */
 .value-case-details {
