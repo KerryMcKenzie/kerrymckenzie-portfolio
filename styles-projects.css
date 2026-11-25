@@ -272,6 +272,10 @@ body {
 .card-media video {
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    /* reserves the full frame even before the video loads (mobile) */
+    object-fit: contain;
+    background: rgba(0, 20, 60, 0.6);
     border-radius: 5px;
     display: block;
     /* kills the stray gap under inline video */
