@@ -1082,10 +1082,10 @@ section h2 {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 16px 10px 14px;
+    gap: 8px;
+    padding: 8px 14px 8px 12px;
     font-family: Consolas, 'Courier New', monospace;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1125,16 +1125,25 @@ section h2 {
     opacity: 0;
 }
 
-/* arrow */
+/* chevron — same stroke style as the scroll-up widget's caret.
+   Points right ( > ) for Read More; rotates to point up ( ^ ) for Read Less. */
 .read-more-arrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
-    font-size: 1.7rem;
-    line-height: 1;
+    width: 16px;
+    height: 16px;
     transition: transform 0.3s ease;
+}
+
+.read-more-arrow svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .read-more-btn:hover,
@@ -1175,6 +1184,11 @@ section h2 {
 
 .value-cases-card.is-open .read-more-arrow {
     transform: rotate(-90deg);
+}
+
+/* open + hover: the up caret nudges upward, like the scroll-up widget */
+.value-cases-card.is-open .read-more-btn:hover .read-more-arrow {
+    transform: rotate(-90deg) translateX(2px);
 }
 
 @keyframes read-more-blink {
